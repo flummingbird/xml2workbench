@@ -166,9 +166,13 @@ def parseGenre(root):
     xml_genres = root.findall('genre',ns)
     genres = []
     for genre in xml_genres:
-        tmp = genre.text.lower()
-        genres.append(tmp)
-    return {'field_genre': '|'.join(genres)}
+# begin wwc
+        if type(genre) == Nonetype:
+            continue
+        else:
+            tmp = genre.text.lower()
+            genres.append(tmp)
+        return {'field_genre': '|'.join(genres)}
     
 def parseOriginInfo(root):
     data = {'field_place_published': [],
@@ -241,7 +245,10 @@ def parseOriginInfo(root):
                 data['field_edtf_date_issued'].remove(issuedDate)
     
     # Collapse multi-valued fields
-    data['field_place_published'] = '|'.join(data['field_place_published'])
+    try:
+        data['field_place_published'] = '|'.join(data['field_place_published'])
+    except:
+        data['field_place_published'] = '|'.join('ERORR IN JOIN')
     data['field_linked_agent'] = '|'.join(data['field_linked_agent'])
     data['field_edtf_date_issued'] = '|'.join(data['field_edtf_date_issued'])
     data['field_edtf_date_created'] = '|'.join(data['field_edtf_date_created'])
@@ -498,7 +505,11 @@ def parse_mods(filename):
     # Parse type of resource
     xml_data.update(parseTypeOfResource(root))
     # Parse genre
-    xml_data.update(parseGenre(root))
+    try:
+        xml_data.update(parseGenre(root))
+    except:
+        print('genre-not-parsable')
+
     # Parse originInfo
     oiData = parseOriginInfo(root)
     # Combine publisher with rest of names
@@ -546,7 +557,7 @@ def parse_mods(filename):
     
 def main():
     data = XmlSet()
-    directory = '/Users/rlefaive/Documents/Projects/2020-ilives-metadata/ilives_mods'
+    directory = '/home/wwc/Desktop/data-hnoc-aww/notworking/'
     data.input_directory(directory)
     #FIXME OUTPUT SHORTCUT
     #print("large titles {}".format('.'.join(data.oversize('title'))))
