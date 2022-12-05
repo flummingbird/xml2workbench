@@ -498,16 +498,16 @@ def parse_mods(filename):
     # Parse type of resource
     xml_data.update(parseTypeOfResource(root))
     # Parse genre
-    xml_data.update(parseGenre(root))
+    # xml_data.update(parseGenre(root))
     # Parse originInfo
-    oiData = parseOriginInfo(root)
+    # oiData = parseOriginInfo(root)
     # Combine publisher with rest of names
-    if oiData['field_linked_agent']:
-        if xml_data['field_linked_agent']:
-            oiData['field_linked_agent'] = '|'.join([xml_data['field_linked_agent'],oiData['field_linked_agent']])
-    else:
-        del oiData['field_linked_agent']
-    xml_data.update(oiData)
+    # if oiData['field_linked_agent']:
+    #     if xml_data['field_linked_agent']:
+    #         oiData['field_linked_agent'] = '|'.join([xml_data['field_linked_agent'],oiData['field_linked_agent']])
+    # else:
+    #     del oiData['field_linked_agent']
+    # xml_data.update(oiData)
     # Parse language
     xml_data.update(parseLanguage(root))
     # Parse physical Description
@@ -546,7 +546,7 @@ def parse_mods(filename):
     
 def main():
     data = XmlSet()
-    directory = '/Users/rlefaive/Documents/Projects/2020-ilives-metadata/ilives_mods'
+    directory = 'tulane-jrphil/'
     data.input_directory(directory)
     #FIXME OUTPUT SHORTCUT
     #print("large titles {}".format('.'.join(data.oversize('title'))))
@@ -554,6 +554,5 @@ def main():
     output_filename = 'output.csv'
     with open(output_filename, 'w') as csv:
         data.print(csv)
-    
-if __name__ == '__main__':
-    main()
+
+main()
