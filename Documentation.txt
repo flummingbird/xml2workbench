@@ -1,0 +1,22 @@
+xml2workbench for LDL Collections
+
+
+
+You should follow steps to download LDL metadata. There are 2 main ways to do so. One requires server access, the other uses a shell script to curl down datastreams from the LDL website.
+
+
+
+Extract your DATASTREAM files (rdf, xml, obj)to a directory.
+
+
+
+Change the input directory in xml2workbench.py on line 561 to the directory in which you have extracted the MODS.xml files for a given collection.
+
+
+
+in your terminal run
+
+
+
+```python3 mod2workbench.xml```
+
