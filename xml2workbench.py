@@ -248,7 +248,7 @@ def parseOriginInfo(root):
                 data['field_edtf_date_issued'].remove(issuedDate)
     
     # Collapse multi-valued fields
-    # data['field_place_of_publication'] = '|'.join(data['field_place_of_publication'])
+    data['field_place_of_publication'] = '|'.join(data['field_place_of_publication'])
     data['field_linked_agent'] = '|'.join(data['field_linked_agent'])
     data['field_edtf_date_issued'] = '|'.join(data['field_edtf_date_issued'])
     data['field_edtf_date_created'] = '|'.join(data['field_edtf_date_created'])
