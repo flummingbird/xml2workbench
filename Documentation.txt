@@ -38,7 +38,10 @@ A)  Extract your DATASTREAM files (rdf, xml, obj)to a directory.
       i.  CTL+D (to log out of subnet machine.)
       j.  copy to other computes as needed.   
             scp Work:/tmp/hnoc-data.zip ~/Downloads/        
-
-B)  Change the input directory in xml2workbench.py on line 561 to the directory in which you have extracted the MODS.xml files for a given collection.
-C)  Run the xml2workbench.py  ==>  python3 mod2workbench.py
-
+B)  Debug and Run xml2workbench.py, metadata from xml tool scripted by Rosie Le Faive:
+    1) I edited the code to fix Nan-type errors in order to have the code work on creating metadata (Documentation in the repository)
+    2) Change the input directory in xml2workbench.py(metadata from xml tool scripted by Rosie Le Faive) to the directory in which you have extracted the MODS.xml
+       files for a given collection.
+    3) Run the xml2workbench.py  ==>  python3 mod2workbench.py
+C)  Process the metadata with 
+D) Run Islandora workbench to ingest data to the new website
