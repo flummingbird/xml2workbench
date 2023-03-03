@@ -43,7 +43,7 @@ You should follow steps to download LDL metadata. There are 2 main ways to do so
         `cp Work:/tmp/hnoc-data.zip ~/Downloads/`</br></br>
             
 ### 2) Debug and Run xml2workbench tool:</br>
-xml2workbench is a tool that extracts metadata from xml files for each node on the old Digital Library website, scripted by Rosie Le Faive. However, the original python script will not work on the Louisiana Digital Library contents, so the code needs to be edited so it could be run on all XML files to expot the metadata.</br
+xml2workbench is a python script that extracts metadata from xml files, for each node in old Digital Library website. It scripted by Rosie Le Faive. However, the original python script will not work on the Louisiana Digital Library contents, adn it needs to be edited according to our need, so it could be run on all XML files to expot the metadata.</br
 - ***Edit the code:*** </br>
 Edit the code to fix Nan-type errors in order to have the code work on creating the right metadata fields according to LDL fields (Documentation about the steps to fix the code is on (https://github.com/Miladkhanlou/XML-to-Metadata-Tool)</br>
 - ***Change the input directory:*** </br>
