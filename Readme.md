@@ -3,7 +3,7 @@
 You should follow steps to download LDL metadata. There are 2 main ways to do so. One requires server access, the other uses a shell script to curl down datastreams from the LDL website.
 
 
-### 1)  Extract your DATASTREAM files (rdf, xml, obj)to a directory.
+### 1)  Extract your Datasteam files (rdf, xml, obj)to a directory.
 ####    A) Getting PidList:
       a.  USE lsu vpn
       b.  ssh to lsu subnet machine
