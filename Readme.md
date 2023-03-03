@@ -3,8 +3,8 @@
 You should follow steps to download LDL metadata. There are 2 main ways to do so. One requires server access, the other uses a shell script to curl down datastreams from the LDL website.
 
 
-### 1)  Extract your Datasteam files (rdf, xml, obj)to a directory.
-####    A) Getting PidList:
+### 1)  Extract your Datasteam files (rdf, xml, obj)to a directory for the post processing later.
+#### A) Getting PidList:
       a.  USE lsu vpn
       b.  ssh to lsu subnet machine
       c.  ssh to dgi-ingest server (hosted on aws)
@@ -15,9 +15,9 @@ You should follow steps to download LDL metadata. There are 2 main ways to do so
          2. Search for content type, Use machine name from link{1}/collection: compoundCModel, sp_pdf, sp_large_image_cmodel
 
 ####    B) downloading the Datastream files:
-    target collection ==>hnoc-awww:collection
-    visit ==> https://ingest.louisianadigitallibrary.org/islandora/object/hnoc-aww:collection/manage
-    PIDS written to file /tmp/hnoc-aww-namespaced.txt 
+target collection ==>hnoc-awww:collection
+visit ==> https://ingest.louisianadigitallibrary.org/islandora/object/hnoc-aww:collection/manage
+- PIDS written to file /tmp/hnoc-aww-namespaced.txt 
 
       a.  after login via server and nav to drupal root (aka /var/www/data)
       b.  drush -u 1 islandora_datastream_crud_fetch_pids --namespace=hnoc-aww --pid_file=/tmp/hnoc-aww-namespaced.txt
@@ -40,10 +40,11 @@ You should follow steps to download LDL metadata. There are 2 main ways to do so
             scp Work:/tmp/hnoc-data.zip ~/Downloads/  
             
 ### 2)  Debug and Run xml2workbench.py (metadata from xml tool initially scripted by Rosie Le Faive), the tool that extracts metadata from xml tool scripted by Rosie Le Faive:
-    A) The original code was edited to fix Nan-type errors in order to have the code work on creating the right metadata fields according to LDL fields (Documentation in https://github.com/Miladkhanlou/XML-to-Metadata-Tool )
-    B) Change the input directory in xml2workbench.py to the directory in which you have extracted the MODS.xml
+A) The original code was edited to fix Nan-type errors in order to have the code work on creating the right metadata fields according to LDL fields (Documentation in https://github.com/Miladkhanlou/XML-to-Metadata-Tool)
+
+B) Change the input directory in xml2workbench.py to the directory in which you have extracted the MODS.xml
        files for a given collection.
-    C) Run the xml2workbench.py  ==>  python3 mod2workbench.py
+C) Run the xml2workbench.py  ==>  python3 mod2workbench.py
     
 ### 3) Running metadata_process.py, a customized python script for processing, cleaning and fixing data in the dataset.
     - To learn more about how script works please visit: https://github.com/Miladkhanlou/Post-Processing-Tool-For-LDL.
