@@ -49,7 +49,7 @@ Edit the code to fix Nan-type errors in order to have the code work on creating 
 - ***Change the input directory:*** </br>
 - ***Run the xml2workbench.py*** </br></br>
 
-### 3) Running metadata_process:</br>
+### 3) Run the metadata process tool:</br>
 The metadata_process is a customized python script for processing, cleaning and fixing data on each the dataset.</br>
 To learn more about how script work,s please visit: (https://github.com/Miladkhanlou/Post-Processing-Tool-For-LDL)</br></br>
 ### 4) Install, configure and run Islandora Workbench ingest tool: </br>
