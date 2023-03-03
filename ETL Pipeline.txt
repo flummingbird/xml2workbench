@@ -45,5 +45,7 @@ B)  Debug and Run xml2workbench.py (metadata from xml tool initially scripted by
        files for a given collection.
     3) Run the xml2workbench.py  ==>  python3 mod2workbench.py
     
-C)  Process the metadata with 
-D) Run Islandora workbench to ingest data to the new website
+C) Running metadata_process.py, a customized python script for processing, cleaning and fixing data in the dataset.
+    - To learn more about how script works please visit: https://github.com/Miladkhanlou/Post-Processing-Tool-For-LDL.
+D) Using Processed and cleaned metadata now every thing is ready to run Islandora workbench to ingest data to the new website 
+    - See documentation on how to install and configure isladnora workbench ingestion tool and running using bash in the link bellow.
