@@ -1,5 +1,5 @@
 Part 1, Debug xml2workbench to read data:
-=====================
+==========================================
 1) 'NoneType' object has no attribute 'text':
     a.	Assigned the whole titleInfo.find('subTitle', ns) into a variable
     b.	checked if subTitle AND subTitle.text is None or not
